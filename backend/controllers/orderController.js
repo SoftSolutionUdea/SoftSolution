@@ -2,6 +2,7 @@ const Order= require("../models/order");
 const Product= require("../models/productos")
 const catchAsyncErrors= require("../middleware/catchAsyncErrors");
 const ErrorHandler = require("../utils/errorHandler");
+const order = require("../models/order");
 
 //Crear una nueva orden
 exports.newOrder= catchAsyncErrors (async (req, res, next)=>{
@@ -91,6 +92,13 @@ exports.updateOrder= catchAsyncErrors(async(req,res,next)=>{
         return next(new ErrorHandler("Esta orden ya fue enviada",400))
     }
 
+    //Restar del Inventario
+    if (req.body.estado !== "Procesando") {
+        order.items.forEach(async item => {
+            await updateStock(item.producto, item.cantidad)
+        });
+    }
+
     order.estado=req.body.estado;
     order.fechaEnvio=Date.now();
 
@@ -101,6 +109,8 @@ exports.updateOrder= catchAsyncErrors(async(req,res,next)=>{
         order
     })
 })
+
+
 
 //para actualizar el inventario desde el back
 async function updateStock(id, quantity){

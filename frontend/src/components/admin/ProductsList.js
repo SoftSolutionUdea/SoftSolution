@@ -10,7 +10,7 @@ import { getAdminProducts, clearErrors, deleteProduct } from '../../actions/prod
 import { Link } from "react-router-dom"
 
 const ProductsList = () => {
-
+    
     const alert = useAlert();
     const dispatch = useDispatch();
 
@@ -36,6 +36,7 @@ const ProductsList = () => {
     }, [dispatch, alert, error])
 
     const setProducts = () => {
+        let contador = 0
         const data = {
             columns: [
                 {
@@ -85,14 +86,11 @@ const ProductsList = () => {
                         <i className="fa fa-trash"></i>
                     </button>
 
-
-
-
                 </Fragment>
             })
         })
 
-        return data;
+        return data
     }
 
     return (

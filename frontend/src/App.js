@@ -33,13 +33,15 @@ import ProcessOrder from './components/admin/ProccessOrder';
 import OrdersList from './components/admin/OrderList';
 import UsersList from './components/admin/UserList';
 import UpdateUser from './components/admin/UpdateUser';
+import { useSelector } from 'react-redux';
 
 function App() {
   useEffect(() => {
     store.dispatch(loadUser())
   }, [])
-
-  return (
+    const { user, isAuthenticated, loading } = useSelector(state => state.auth)
+  
+    return (
     <Router>
       <div className="App">
         <Header />
@@ -118,7 +120,9 @@ function App() {
 
           </Routes>
         </div>
-        <Footer />
+        {!loading && (!isAuthenticated || user.role !== "admin") && (
+            <Footer />
+        )}
       </div>
     </Router>
   );
