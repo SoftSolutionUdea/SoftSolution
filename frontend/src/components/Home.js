@@ -5,7 +5,7 @@ import { getProducts } from '../actions/productActions'
 import { useParams, Link } from 'react-router-dom'
 import { useAlert } from 'react-alert'
 import Pagination from 'react-js-pagination'
-import Slider from "rc-slider"
+//import Slider from "rc-slider"
 //import 'rc-slider/assets/index.css'
 
 export const Home = () => {
@@ -38,6 +38,7 @@ export const Home = () => {
 
                     <section id="productos" className='container mt-5'>
                         <div className='row'>
+                            {/** 
                             <Slider
                                 range
                                 className='t-slider'
@@ -57,7 +58,7 @@ export const Home = () => {
                                 value={precio}
                                 onChange={precio => setPrecio(precio)}
                             ></Slider>
-
+                                */}
                             {products && products.map(producto => (
                                 <div key={producto._id} className='col-sm-12 col-md-6 col-lg-3 my-3'>
                                     <div className='card p-3 rounded'>
