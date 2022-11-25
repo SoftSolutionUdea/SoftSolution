@@ -5,9 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
-    "dev": "export NODE_ENV=DEVELOPMENT&& nodemon backend/server",
-    "prod": "export NODE_ENV=PRODUCTION&& nodemon backend/server",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && NODE_OPTIONS=--openssl-legacy-provider && npm install --force --prefix frontend && npm run build --prefix frontend"
+    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/server",
+    "prod": "SET NODE_ENV=PRODUCTION& nodemon backend/server"
   },
   "author": "soft solution",
   "license": "ISC",
@@ -23,6 +22,7 @@
     "mongoose": "^6.7.0",
     "node-fetch": "^3.2.10",
     "nodemailer": "^6.8.0",
+    "rc-slider": "^10.1.0",
     "react-alert-template-basic": "^1.0.2",
     "validator": "^13.7.0"
   },
