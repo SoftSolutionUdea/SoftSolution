@@ -7,7 +7,7 @@ const fileUpload = require('express-fileUpload')
 const path = require("path")
 
 //Seteamos archivo de configuracion
-if (process.env.NODE_ENV === "PRODUCTION") require('dotenv').config({path:'./backend/config/config.env'})
+if (process.env.NODE_ENV !== "PRODUCTION") require('dotenv').config({path:'./backend/config/config.env'})
  
 //Uso de constantes importadas
 app.use(express.json());
@@ -24,7 +24,7 @@ app.use('/api',productos)
 app.use('/api',usuarios)
 app.use('/api', ordenes)
 
-if (process.env.NODE_ENV !== "PRODUCTION") {
+if (process.env.NODE_ENV === "PRODUCTION") {
     app.use(express.static(path.join(__dirname, '../frontend/build')))
     app.get("*", (req, res) => {
         res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'))
