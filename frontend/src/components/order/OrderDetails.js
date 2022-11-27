@@ -28,7 +28,7 @@ export const OrderDetails = () => {
     <Fragment>
             <MetaData title={'Detalle del Pedido'} />
  
-            {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
+          {loading ? <i className="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
                 <Fragment>
                     <div className="row d-flex justify-content-between">
                         <div className="col-12 col-lg-8 mt-5 order-details">

@@ -77,7 +77,7 @@ const ProductsList = () => {
                         <i className="fa fa-eye"></i>
 
                     </Link><Link to={`/updateProduct/${product._id}`} className="btn btn-warning py-1 px-2">
-                        <i class="fa fa-pencil"></i>
+                        <i className="fa fa-pencil"></i>
                     </Link>
 
 
@@ -107,7 +107,7 @@ const ProductsList = () => {
                     <Fragment>
                         <h1 className="my-5">Todos los productos</h1>
 
-                        {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
+                        {loading ? <i className="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
                             <MDBDataTable
                                 data={setProducts()}
                                 className="px-3"

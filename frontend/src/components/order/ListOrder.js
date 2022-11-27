@@ -83,7 +83,7 @@ export const ListOrder = () => {
  
             <h1 className="my-5">Mis Pedidos</h1>
  
-            {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
+            {loading ? <i className="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
                 <MDBDataTable
                     data={setOrders()}
                     className="px-3"

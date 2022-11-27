@@ -26,8 +26,4 @@ router.route('/producto/:id').put(isAuthenticatedUser,authorizeRoles("admin"),up
 router.route('/producto/:id').delete(isAuthenticatedUser,authorizeRoles("admin"),deleteProduct); //Creacion ruta de eliminacion por ID
 router.route('/admin/productos').get(isAuthenticatedUser,authorizeRoles("admin"),getAdminProducts);//Establecemos desde que ruta queremos ver el getProducts
 
-
-
-
-
 module.exports=router; //para que se vea desde afuera 

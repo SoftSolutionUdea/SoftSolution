@@ -227,26 +227,3 @@ exports.getAdminProducts = catchAsyncErrors(async (req, res, next) => {
     })
  
 })
-
- 
-//HABLEMOS DE FETCH
-//Ver todos los productos
-function verProductos() {
-    fetch('http://localhost:4000/api/productos')
-        .then(res => res.json())
-        .then(res => console.log(res))
-        .catch(err => console.error(err))
-}
- 
-//verProductos(); LLamamos al metodo creado para probar la consulta
- 
-//Ver por id
-function verProductoPorID(id) {
-    fetch('http://localhost:4000/api/producto/' + id)
-        .then(res => res.json())
-        .then(res => console.log(res))
-        .catch(err => console.error(err))
-}
- 
-//verProductoPorID('63456a8d9163cb9dbbcaa235'); Probamos el metodo con un id
- 
